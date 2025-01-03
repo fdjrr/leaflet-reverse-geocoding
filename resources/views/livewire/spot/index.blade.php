@@ -6,12 +6,15 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
-            <x-button-link :href="route('spot.create')">{{ __('Create') }}</x-button-link>
+        <div class="mx-auto space-y-6 max-w-7xl sm:px-6 lg:px-8">
+            <div>
+                <x-button-link :href="route('spot.create')">{{ __('Create') }}</x-button-link>
+                <x-button-link :href="route('spot.view')">{{ __('View Spot') }}</x-button-link>
+            </div>
 
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
-                    <thead class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 rtl:text-right">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th class="px-6 py-3" scope="col">
                                 Spot Name
@@ -34,19 +37,19 @@
                         @forelse ($spots as $spot)
                             <tr
                                 class="border-b odd:bg-white even:bg-gray-50 dark:border-gray-700 odd:dark:bg-gray-900 even:dark:bg-gray-800">
-                                <th class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+                                <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                                     scope="row">
                                     {{ $spot->name }}
                                 </th>
-                                <th class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+                                <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                                     scope="row">
                                     {{ $spot->lat }}
                                 </th>
-                                <th class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+                                <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                                     scope="row">
                                     {{ $spot->long }}
                                 </th>
-                                <th class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+                                <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                                     scope="row">
                                     {{ $spot->category?->name }}
                                 </th>
