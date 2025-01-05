@@ -22,7 +22,7 @@ class View extends Component
                 'message' => 'Spot created successfully',
             ]);
 
-            $this->dispatch('closeCreateSpotModal');
+            $this->dispatch('closeCreateSpotModal', data: $spot);
         } else {
             session()->flash('flash', [
                 'type'    => 'danger',

@@ -200,7 +200,25 @@
             })
         }
 
-        $wire.on('closeCreateSpotModal', () => {
+        $wire.on('closeCreateSpotModal', (event) => {
+            const {
+                data
+            } = event
+
+            const marker = L.marker([data.lat, data.long], {
+                    title: data.name,
+                })
+                .bindPopup(data.name)
+                .openPopup()
+                .addTo(map);
+            marker.feature = {
+                properties: {
+                    title: data.name
+                }
+            };
+            markersLayer.addLayer(marker);
+            map.setView([data.lat, data.long], 16);
+
             modal.hide()
         })
     </script>
