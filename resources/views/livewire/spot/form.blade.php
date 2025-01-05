@@ -21,13 +21,6 @@
                         <x-input-error class="mt-2" :messages="$errors->get('form.name')" />
                     </div>
 
-                    <div>
-                        <x-input-label for="image_path" :value="__('Upload Image')" />
-                        <x-file-input id="image_path" name="image_path" wire:model="form.image_path"
-                            autocomplete="off" />
-                        <x-input-error class="mt-2" :messages="$errors->get('form.image_path')" />
-                    </div>
-
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <x-input-label for="lat" :value="__('Latitude')" />

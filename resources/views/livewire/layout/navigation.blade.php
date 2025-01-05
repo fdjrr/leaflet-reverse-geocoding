@@ -35,8 +35,13 @@ new class extends Component {
                     <x-nav-link :href="route('category.index')" :active="request()->routeIs('category.*')" wire:navigate>
                         {{ __('Category') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('spot.index')" :active="request()->routeIs('spot.*')" wire:navigate>
+                    <x-nav-link :href="route('spot.index')" :active="request()->routeIs('spot.index') ||
+                        request()->routeIs('spot.create') ||
+                        request()->routeIs('spot.edit')" wire:navigate>
                         {{ __('Spot') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('spot.view')" :active="request()->routeIs('spot.view')" wire:navigate>
+                        {{ __('View Spot') }}
                     </x-nav-link>
                 </div>
             </div>

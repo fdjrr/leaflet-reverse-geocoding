@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->string('icon')->nullable();
-            $table->string('public_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

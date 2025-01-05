@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('slug');
             $table->string('lat');
             $table->string('long');
-            $table->string('image_path')->nullable();
-            $table->string('public_id')->nullable();
             $table->text('description');
             $table->foreignId('category_id')->constrained('categories')->cascadeOnDelete();
             $table->timestamps();

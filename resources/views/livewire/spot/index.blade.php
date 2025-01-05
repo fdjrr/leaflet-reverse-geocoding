@@ -7,10 +7,7 @@
 
     <div class="py-12">
         <div class="mx-auto space-y-6 max-w-7xl sm:px-6 lg:px-8">
-            <div>
-                <x-button-link :href="route('spot.create')">{{ __('Create') }}</x-button-link>
-                <x-button-link :href="route('spot.view')">{{ __('View Spot') }}</x-button-link>
-            </div>
+            <x-button-link :href="route('spot.create')">{{ __('Create') }}</x-button-link>
 
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 rtl:text-right">

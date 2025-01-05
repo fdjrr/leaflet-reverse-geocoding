@@ -8,8 +8,6 @@ use Livewire\Form;
 class UpdateCategoryForm extends Form
 {
     public $name;
-    public $icon;
-    public $public_id;
 
     public function update(Category $category)
     {
@@ -18,9 +16,7 @@ class UpdateCategoryForm extends Form
         ]);
 
         $category->update([
-            'name'      => $this->name,
-            'icon'      => $category->icon === $this->icon ? $category->icon : $this->icon->store('categories'),
-            'public_id' => $this->public_id,
+            'name' => $this->name,
         ]);
 
         return $category;

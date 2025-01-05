@@ -6,25 +6,19 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
+        <div class="mx-auto space-y-6 max-w-7xl sm:px-6 lg:px-8">
             @if (session()->has('flash'))
                 <x-flash-message
                     variant="{{ session('flash')['type'] }}">{{ session('flash')['message'] }}</x-flash-message>
             @endif
 
-            <div class="bg-white p-4 shadow sm:rounded-lg sm:p-8">
+            <div class="p-4 bg-white shadow sm:rounded-lg sm:p-8">
                 <form class="space-y-6" wire:submit.prevent="{{ $page_meta['form']['action'] }}">
                     <div>
                         <x-input-label for="name" :value="__('Name')" />
-                        <x-text-input class="mt-1 block w-full" id="name" name="name" type="text"
+                        <x-text-input class="block w-full mt-1" id="name" name="name" type="text"
                             wire:model="form.name" autocomplete="off" />
                         <x-input-error class="mt-2" :messages="$errors->get('form.name')" />
-                    </div>
-
-                    <div>
-                        <x-input-label for="icon" :value="__('Upload Icon')" />
-                        <x-file-input id="icon" name="icon" wire:model="form.icon" autocomplete="off" />
-                        <x-input-error class="mt-2" :messages="$errors->get('form.icon')" />
                     </div>
 
                     <div class="flex items-center gap-4">
